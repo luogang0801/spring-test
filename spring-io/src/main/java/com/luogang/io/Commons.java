@@ -35,7 +35,7 @@ public class Commons {
 	public final static String SEND_MESSAGE_STR = "sendMsg";
 
 	public final static byte SEND_FILE = 2;
-
+ 
 	public final static String SEND_FILE_STR = "sendFile";
 
 	public final static byte SEND_B_FILE = 3;
