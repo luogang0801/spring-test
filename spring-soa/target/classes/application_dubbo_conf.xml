@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd  
+	http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+    "
+	default-autowire="byType">
+
+	<dubbo:application name="server-soa" />
+
+
+	<!-- 分组注册 <dubbo:registry id="chinaRegistry" protocol="zookeeper" address="10.20.153.10:2181" 
+		group="china" /> <dubbo:registry id="intlRegistry" protocol="zookeeper" address="10.20.153.10:2181" 
+		group="intl" /> -->
+
+	<dubbo:registry id="businessRegistry" protocol="zookeeper"
+		address="${zookeeper.url}" client="curator" group="${soa.regist.1}" />
+
+	<dubbo:protocol id="soa-dubbo" name="dubbo" host="127.0.0.1"
+		port="-1" threadpool="fixed" threads="25" serialization="dubbo"
+		register="true" />
+
+	<dubbo:provider filter="testFilter" timeout="30000"
+	retries="0" />
+
+
+</beans>

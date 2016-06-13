@@ -1,0 +1,2 @@
+#xxxFilter=com.xxx.AuthorityFilter
+testFilter=com.lyc.soa.filter.TestFilter
