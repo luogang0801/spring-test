@@ -5,13 +5,5 @@
     <artifactId>spring-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>spring-soa</artifactId>
-  <packaging>war</packaging>
-  <dependencies>
-  	<dependency>
-  		<groupId>spring-parent</groupId>
-  		<artifactId>spring-commons</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  </dependencies>
+  <artifactId>spring-data</artifactId>
 </project>

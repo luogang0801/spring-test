@@ -101,6 +101,7 @@
 		<module>spring-web</module>
 		<module>spring-commons</module>
 		<module>spring-io</module>
+		<module>spring-data</module>
 	</modules>
 
 </project>
