@@ -111,7 +111,6 @@ public abstract class FileStoreAdpter {
 	 * @throws FileUploadException
 	 */
 	public boolean rename(String filePath, String newFileName) throws Exception {
-		// return default_result_bool;
 		throw new FileUploadException("修改文件名称错误");
 	}
 
@@ -126,7 +125,6 @@ public abstract class FileStoreAdpter {
 	 * @throws FileUploadException
 	 */
 	public boolean mkdirs(String dirPath) throws Exception {
-		// return default_result_bool;
 		throw new FileUploadException("创建目录错误");
 	}
 

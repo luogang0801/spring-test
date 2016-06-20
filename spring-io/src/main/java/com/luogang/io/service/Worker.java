@@ -93,6 +93,7 @@ public class Worker extends Thread {
 		int length = socketWrapper.readInt();
 		byte[] message = new byte[length];
 		socketWrapper.read(message);
+		socketWrapper.write(1);
 		logInfo("线程：" + name + " 接受到来自客户端传来message信息：" + new String(message, DEFAULT_MESSAGE_CHARSET));
 	}
 
